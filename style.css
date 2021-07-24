@@ -1,7 +1,9 @@
-*{
+*,*::after,*::before{
     padding: 0px;
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+
 }
 body{
     overflow-x: hidden;
@@ -12,7 +14,7 @@ body{
     }
 }
 .section{
-    margin-top: 50px;
+    margin-top: 80px;
 }
 .heading{
     text-align: center;
@@ -22,6 +24,7 @@ body{
     text-transform: uppercase;
     letter-spacing: .6px;
 }
+
 
 
 
@@ -80,6 +83,74 @@ a.nav-links:hover{
 .nav-toggle{
     display: none;
 }
+.header-container{
+    padding-top: 70px;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.header-text{
+    width: 60%;
+    color: white;
+    font-weight: 600;
+}
+.header-text span{
+    font-size: 3.2rem;
+    text-align: left;
+}
+.header-search{
+    margin: 10px 0px;
+    width: 100%;
+}
+.header-search input{
+    width: 70%;
+    height: 35px;
+    outline: none;
+}
+.header-search button{
+    min-width: 70px;
+    width: 16%;
+    height: 38px;
+    border: none;
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+}
+.arrow{
+    position: absolute;
+    bottom: 10%;
+    left: 45%;
+    transform: translate(0,-50%);
+    animation: zig infinite 4s linear;
+    cursor: pointer;
+}
+.arrow img{
+    width: 2.2rem;
+}
+@keyframes zig{
+    0%,80% {
+        transform: translateY(0px);
+    }
+    85% {
+        transform: translateY(10px);
+    }
+    90% {
+        transform: translateY(0px);
+    }
+    95% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+
+}
 @media(max-width:720px){
     .navbar{
         height: 65px;
@@ -105,78 +176,9 @@ a.nav-links:hover{
     .nav-toggle img{
         width: 20px;
     }
-}
-
-
-
-/* heading section */
-
-.header-container{
-    padding-top: 70px;
-    width: 100vw;
-    height: calc(100vh - 70px);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.header-text{
-    width: 80%;
-    color: white;
-    font-weight: 600;
-}
-.header-text span{
-    font-size: 3.2rem;
-    text-align: left;
-}
-.header-search{
-    width: 100%;
-}
-.header-search input{
-    width: 74%;
-    height: 35px;
-    outline: none;
-}
-.header-search button{
-    min-width: 65px;
-    width: 16%;
-    height: 38px;
-    border: none;
-    background-color: orangered;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1.1px;
-}
-.arrow{
-    position: absolute;
-    bottom: 10%;
-    left: 45%;
-    transform: translate(0,-50%);
-    animation: zig infinite 4s;
-    cursor: pointer;
-}
-@keyframes zig{
-    0%,80% {
-        transform: translateY(0px);
+    .header-text{
+        width: 80%;
     }
-    85% {
-        transform: translateY(10px);
-    }
-    90% {
-        transform: translateY(0px);
-    }
-    95% {
-        transform: translateY(10px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-
-}
-.arrow img{
-    width: 40px;
 }
 
 
@@ -192,6 +194,7 @@ a.nav-links:hover{
     position: relative;
     flex: 1 1 300px;
     margin: 10px 20px;
+    padding: 20px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -213,13 +216,20 @@ a.nav-links:hover{
 }
 .card-text{
     width: 80%;
-    padding: 20px;
     text-align: center;
     transition: .3s;
 }
 .card-text h4{
     letter-spacing: .4px;
     text-transform: uppercase;
+    color: seagreen;
+    transition: .5s;
+}
+.card:nth-child(2) h4{
+    color: orangered;
+}
+.card:nth-child(3) h4{
+    color: darkcyan;
 }
 .card-design{
     border-radius: 5px;
@@ -231,10 +241,10 @@ a.nav-links:hover{
     background-color: palegreen;
     transition: .5s;
 }
-.b-design{
-    background-color: lightcoral;
+.card:nth-child(2) .card-design{
+    background-color: lightsalmon;
 }
-.c-design{
+.card:nth-child(3) .card-design{
     background-color: paleturquoise;
 }
 .card:hover .card-design{
@@ -246,6 +256,9 @@ a.nav-links:hover{
 .card:hover .card-img img{
     transform: translateY(-200px);
 }
+.card:hover .card-text h4{
+    color: black;
+}
 .card-text a{
     font-weight: bold;
     display: inline-flex;
@@ -255,6 +268,88 @@ a.nav-links:hover{
     color: seagreen;
     text-decoration: none;
     border: 2px solid seagreen;
+}
+
+
+
+/* services section */
+
+.veg-container{
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+.veg{
+    flex: 1 1 200px;
+    margin: 10px 20px;
+    padding: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: palegreen;
+    transition: .5s;
+}
+.veg:nth-child(3n+2)
+{
+    background-color: lightsalmon;
+}
+.veg:nth-child(3n+3)
+{
+    background-color: paleturquoise;
+}
+.veg:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.veg-img{
+    width: 200px;
+    height: 160px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.veg-img img{
+    height: 140px;
+    transition: .5s;
+}
+.veg-text{
+    width: 80%;
+    text-align: center;
+    transition: .3s;
+}
+.veg-text h4{
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    color: seagreen;
+}
+.veg:nth-child(3n+2) h4{
+    color: orangered;
+}
+.veg:nth-child(3n+3) h4{
+    color: darkcyan;
+}
+.veg-text a{
+    font-weight: bold;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    color: seagreen;
+    text-decoration: none;
+    border: 2px solid seagreen;
+}
+
+
+
+.init-container{
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
 }
 
 
@@ -299,6 +394,35 @@ a.nav-links:hover{
     text-transform: uppercase;
 }
 
+
+
+.partner-container{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+.partner-container .partner{
+    width: max-content;
+    background-color: lightskyblue;
+    transition: .5s;
+    animation: partner 50s infinite linear;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.partner-container img{
+    height: 80px;
+    margin: 10px 30px;
+}
+@keyframes partner{
+    0%{
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(-1000px);
+    }
+
+}
 
 
 /* Contact section */
