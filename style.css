@@ -143,6 +143,15 @@ section{
     background-color: #28282B;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;   
 }
+.nav-logo{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+} 
+.nav-logo img{
+    width: 50px;
+    padding: 15px;
+}
 .nav-logo h2{
     color: white;
     font-size: 1.2rem;
@@ -170,6 +179,15 @@ a.nav-links{
 a.nav-links:hover{
     color: greenyellow;
     border-bottom: 2px solid greenyellow;
+}
+.cart{
+    border: 2px solid #28282B;
+    padding: 2px;
+    border-radius: 5px;
+    width: 40px;
+}
+.cart:hover{
+    border: 2px solid greenyellow;
 }
 .nav-toggle{
     display: none;
@@ -248,6 +266,10 @@ a.nav-links:hover{
         width: calc(100% - 60px);
         justify-content: space-between;
         padding: 0px 30px;
+    }
+    .nav-logo img{
+        width: 40px;
+        padding: 12px 8px;
     }
     .nav-logo h2{
         display: none;
@@ -643,9 +665,10 @@ a.nav-links:hover{
 }
 footer{
     margin-top: 15%;
-    background-color: gray;
+    background-color: rgba(0, 0, 0, 0.700);
     padding: 20px;
     text-align: center;
+    color: #f0f0f0;
 }
 
 @media(max-width:720px){
@@ -679,9 +702,9 @@ footer{
 }
 
 
-section:nth-child(5){
+#grid-section{
     background-color: #f0f0f0;
-
+    padding-bottom: 30px;
 }
 .grid-flex{
     width: 100%;
@@ -690,7 +713,7 @@ section:nth-child(5){
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding: 20px 0px;
+    padding: 10px 0px;
 }
 .grid{
     width: 90%;
@@ -714,8 +737,8 @@ section:nth-child(5){
     height: 100%;
 }
 .child-text{
-    letter-spacing: .8px;
-    word-spacing: 1px;
+    letter-spacing: .6px;
+    word-spacing: .2px;
     position: absolute;
     bottom: 0%;
     left: 0%;
@@ -741,7 +764,8 @@ section:nth-child(8){
 }
 .background-container{
     width: 100%;
-    background-image: url("https://cdn.pixabay.com/photo/2017/08/02/14/26/winter-landscape-2571788_960_720.jpg");
+    /* background-image: url("https://cdn.pixabay.com/photo/2017/08/02/14/26/winter-landscape-2571788_960_720.jpg"); */
+    background-color: seagreen;
     background-size: cover;
     display: inline-flex;
     justify-content: center;
@@ -749,48 +773,62 @@ section:nth-child(8){
     flex-direction: column;
     padding: 20px 0px;
 }
+.test-slider{
+    margin-top: 10px;
+}
 .wrap{
     width: 700px;
     overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .test-box{
     width: max-content;
     display: inline-flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     transition: 1s;
 }
 .test{
-    margin: 20px 50px;
-    width: 650px;
+    background-color:white;
+    width: 710px;
     display: inline-flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding: 20px;
 }
 .test-img{
-    width: 50%;
-    overflow: hidden;
-    clip-path: circle(45%);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 280px;
 }
 .test-img img{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     width: 100%;
+    height: 100%;
 }
 .test-text{
-    z-index: 2;
-    width: 50%;
-    margin-left: -70px;
-    height: 180px;
+    letter-spacing: .4px;
+    word-spacing: .2px;
+    position: relative;
+    width: 330px;
+    height: 260px;
+    padding: 10px 20px;
+    text-align: center;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-align: center;
-    padding: 10px 20px;
-    background-image: linear-gradient(to right top, #051937, #2aa1e6);
-    color: white;
-    border-radius: 5px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.quote{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+#lq{
+    left: 20px;
+    top: 10px;
+}
+#rq{
+    bottom: 10px;
+    right: 10px;
 }
 .buttons{
     margin-top: 20px;
@@ -819,28 +857,27 @@ section:nth-child(8){
         margin-top: 50%;
     }
     .wrap{
-        width: 340px;
+        width: 320px;
         overflow: hidden;
+    }
+    .test-box{
+        background-color: white;
+        transition: .5s;
     }
     .test{
-        margin: 5px;
-        margin-right: 380px;
-        width: 360px;
-        display: inline-flex;
-        justify-content: space-around;
-        align-items: center;
+        margin-right: 430px;
+        padding: 10px;
+        padding-top: 20px;
+        width: 300px;
         flex-direction: column;
-    }
-    .test-img{
-        width: 80%;
-        overflow: hidden;
-        clip-path: circle(45%);
+        justify-content: center;
     }
     .test-text{
-        z-index: 2;
-        width: 60%;
-        margin-left: 0px;
-        margin-top: -40px;
-        height: 100px;
+        width: 280px;
+        height: 240px;
+        padding: 0;
+        margin: 0px;
+        padding: 0;
     }
+
 }
