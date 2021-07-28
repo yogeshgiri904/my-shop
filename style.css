@@ -1,4 +1,4 @@
-*,*::after,*::before{
+*{
     padding: 0px;
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
@@ -16,9 +16,15 @@ section{
     position: relative;
     margin-top: 80px;
 }
-.heading{
+.section-header{
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding-bottom: 20px;
+    padding: 15px 0px;
+}
+.heading{
     font-size: 25px;
     font-weight: 700;
     text-transform: uppercase;
@@ -121,7 +127,7 @@ section{
     z-index: -10;
     width: 100vw;
     height: 100vh;
-    background-image: url(img/bg-1.jpg);
+    background-image: url(bg-1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -287,6 +293,8 @@ a.nav-links:hover{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 5px;
     cursor: pointer;
+    overflow: hidden;
+
 }
 .card-img{
     width: 200px;
@@ -320,8 +328,8 @@ a.nav-links:hover{
 .card-design{
     border-radius: 5px;
     z-index: -1;
-    width: 100%;
-    height: 100%;
+    width: 110%;
+    height: 110%;
     position: absolute;
     clip-path: circle(45% at 0 0);
     background-color: palegreen;
@@ -567,7 +575,7 @@ a.nav-links:hover{
     display: inline-flex;
     justify-content: space-around;
     align-items: center;
-    background-image: url(img/bg-4.jpg);
+    background-image: url("https://cdn.pixabay.com/photo/2017/06/11/02/05/wheat-2391348_960_720.jpg");
     background-size: cover;
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -594,6 +602,7 @@ a.nav-links:hover{
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    font-weight: 700;
 }
 .contact-form form{
     width: 60%;
@@ -633,7 +642,7 @@ a.nav-links:hover{
     margin-top: 20px;
 }
 footer{
-    margin-top: 30%;
+    margin-top: 15%;
     background-color: gray;
     padding: 20px;
     text-align: center;
@@ -664,46 +673,75 @@ footer{
         width: 80%;
     }
     footer{
-        margin-top: 60%;
+        margin-top: 20%;
     }
     
 }
 
 
+section:nth-child(5){
+    background-color: #f0f0f0;
+
+}
 .grid-flex{
     width: 100%;
     height: fit-content;
     display: inline-flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
-    background-image: url(img/back-10.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     padding: 20px 0px;
 }
 .grid{
     width: 90%;
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    grid-auto-rows: auto;
+}
+.grid-blur{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.grid-child{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.child-text{
+    letter-spacing: .8px;
+    word-spacing: 1px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 .child1{
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 2;
+    grid-column: 1/3;
+    grid-row: 1/3;
+
 }
-.grid img{
-    height: 100%;
-    width: 100%;
+@media(max-width:720px){
+    .grid{
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 }
 
 
 
-
+section:nth-child(8){
+    margin-top: 25%;
+}
 .background-container{
     width: 100%;
-    margin-top: 25%;
-    background-image: url(img/dose-juice-ocnsb17U6FE-unsplash.jpg);
+    background-image: url("https://cdn.pixabay.com/photo/2017/08/02/14/26/winter-landscape-2571788_960_720.jpg");
     background-size: cover;
     display: inline-flex;
     justify-content: center;
@@ -733,6 +771,7 @@ footer{
     width: 50%;
     overflow: hidden;
     clip-path: circle(45%);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .test-img img{
     width: 100%;
@@ -740,7 +779,7 @@ footer{
 .test-text{
     z-index: 2;
     width: 50%;
-    margin-left: -80px;
+    margin-left: -70px;
     height: 180px;
     display: inline-flex;
     justify-content: center;
@@ -748,9 +787,10 @@ footer{
     flex-direction: column;
     text-align: center;
     padding: 10px 20px;
-    background-color: olivedrab;
+    background-image: linear-gradient(to right top, #051937, #2aa1e6);
     color: white;
     border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .buttons{
     margin-top: 20px;
@@ -768,7 +808,7 @@ footer{
     outline: none;
     transition: .5s;
     cursor: pointer;
-    background-color: white;
+    background-color: #28282B;
 }
 #btn-1{
     width: 30px;
