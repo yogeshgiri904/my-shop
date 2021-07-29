@@ -121,8 +121,7 @@ section{
 
 /* nav section */
 
-.bg-img
-{
+.bg-img{
     position: absolute;
     z-index: -10;
     width: 100vw;
@@ -175,13 +174,13 @@ a.nav-links{
     margin-left: 20px;
     color: white;
     text-decoration: none;
+    transition: .2s;
 }
 a.nav-links:hover{
     color: greenyellow;
     border-bottom: 2px solid greenyellow;
 }
 .cart{
-    border: 2px solid #28282B;
     padding: 2px;
     border-radius: 5px;
     width: 40px;
@@ -279,18 +278,55 @@ a.nav-links:hover{
         font-size: 1.8rem;
         display: block;
     }
-    .nav-expand{
-        display: none;
-    }
-    .nav-toggle
-    {
-        display: block;
+    .nav-toggle{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 20px;
     }
     .nav-toggle img{
-        width: 20px;
+        width: 25px;
+        position: absolute;
+        transition: all 1s;
+    }
+    #cross{
+        width: 30px;
+        display: none;
     }
     .header-text{
         width: 80%;
+    }
+    .nav-expand{
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        background-color: #28282B;
+        transform: translateX(100vw);
+        transition: .5s ease-in-out;
+    }
+    .nav-expand ul{
+        width: 100vw;
+        display: inline-flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .nav-expand ul li{
+        text-align: center;
+        width: 100vw;
+        list-style-type: none;
+        letter-spacing: 1px;
+        padding: 10px 0px;
+    }
+    .nav-expand ul li a{
+        font-size: 1.6rem;
     }
 }
 
@@ -765,7 +801,7 @@ section:nth-child(8){
 .background-container{
     width: 100%;
     /* background-image: url("https://cdn.pixabay.com/photo/2017/08/02/14/26/winter-landscape-2571788_960_720.jpg"); */
-    background-color: seagreen;
+    background-color: goldenrod;
     background-size: cover;
     display: inline-flex;
     justify-content: center;

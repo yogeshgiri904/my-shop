@@ -37,15 +37,16 @@
                 <h2>GOSWAMI KHAD BHANDAR</h2><h3>GKB</h3>
             </div>
             <div class="nav-toggle">
-                <img src="img/menu-min.png" alt="menu-bar">
+                <img src="https://image.flaticon.com/icons/png/512/812/812847.png" alt="menu-bar" id="bar">
+                <img src="https://image.flaticon.com/icons/png/512/3699/3699522.png" alt="cancel" id="cross">
             </div>
-            <div class="nav-expand">
+            <div class="nav-expand" id="nav-expand">
                 <ul>
-                    <li class="nav-item"><a href="#" class="nav-links">Home</a></li>
-                    <li class="nav-item"><a href="#product" class="nav-links">Products</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-links">About Us</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-links">Contact Us</a></li>
-                    <li class="nav-item"><a href="#" class="nav-links"><img src="https://img.icons8.com/fluent/96/000000/fast-cart.png" class="cart"/></a></li>
+                    <li class="nav-item" id=nav-item><a href="#" class="nav-links">Home</a></li>
+                    <li class="nav-item" id=nav-item><a href="#product" class="nav-links">Products</a></li>
+                    <li class="nav-item" id=nav-item><a href="#about" class="nav-links">About Us</a></li>
+                    <li class="nav-item" id=nav-item><a href="#contact" class="nav-links">Contact Us</a></li>
+                    <li class="nav-item" id=nav-item><a href="#" class="nav-links"><img src="https://img.icons8.com/fluent/96/000000/fast-cart.png" class="cart"/></a></li>
                 </ul> 
             </div>
         </nav>
@@ -64,13 +65,13 @@
                     <button type="submit">Search</button>
                 </div>
                 <div class="arrow" id="product">
-                    <img src="img/arrow-min.png" alt="arrow-down">
+                    <img src="img/arrow-min.png" alt="arrow-down" id="arrow">
                 </div>
             </div>
         </div>
 
         <section>
-            <div class="section-header">
+            <div class="section-header"    id="yoyo">
                 <h3 class="heading"><span>Our</span> Partners</h3>
             </div>
                 <div class="partner-container">
@@ -369,52 +370,4 @@
     </div>
 </body>
 </html>       
-<script>
-    function func() {
-        document.getElementById("loader").style.display = "none";
-    }
-</script>
-
-<script>
-    document.getElementById("btn-1").addEventListener('click', function() {
-        document.getElementById("move").style.transform= "translate(0px)";
-        document.getElementById("btn-1").style.width = "30px";
-        document.getElementById("btn-2").style.width = "12px";
-        document.getElementById("btn-3").style.width = "12px";
-        document.getElementById("btn-4").style.width = "12px";
-        document.getElementById("btn-5").style.width = "12px";
-    });
-    document.getElementById("btn-2").addEventListener('click', function() {
-        document.getElementById("move").style.transform= "translate(-750px)";
-        document.getElementById("btn-2").style.width = "30px";
-        document.getElementById("btn-1").style.width = "12px";
-        document.getElementById("btn-3").style.width = "12px";
-        document.getElementById("btn-4").style.width = "12px";
-        document.getElementById("btn-5").style.width = "12px";
-    });
-    document.getElementById("btn-3").addEventListener('click', function() {
-        document.getElementById("move").style.transform= "translate(-1500px)";
-        document.getElementById("btn-3").style.width = "30px";
-        document.getElementById("btn-2").style.width = "12px";
-        document.getElementById("btn-1").style.width = "12px";
-        document.getElementById("btn-4").style.width = "12px";
-        document.getElementById("btn-5").style.width = "12px";
-    });
-    document.getElementById("btn-4").addEventListener('click', function() {
-        document.getElementById("move").style.transform= "translate(-2250px)";
-        document.getElementById("btn-4").style.width = "30px";
-        document.getElementById("btn-2").style.width = "12px";
-        document.getElementById("btn-3").style.width = "12px";
-        document.getElementById("btn-1").style.width = "12px";
-        document.getElementById("btn-5").style.width = "12px";
-    });
-    document.getElementById("btn-5").addEventListener('click', function() {
-        document.getElementById("move").style.transform= "translate(-3000px)";
-        document.getElementById("btn-5").style.width = "30px";
-        document.getElementById("btn-2").style.width = "12px";
-        document.getElementById("btn-3").style.width = "12px";
-        document.getElementById("btn-4").style.width = "12px";
-        document.getElementById("btn-1").style.width = "12px";
-    });
-
-</script>
+<script src="script.js"></script>
