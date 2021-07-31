@@ -45,15 +45,25 @@ document.getElementById("btn-5").addEventListener('click', function() {
     document.getElementById("btn-1").style.width = "12px";
 });
 
-// testimonial auto
-var i = 0;
-var intervalId = setInterval(function(){
-if(i === 4){
-    clearInterval(intervalId);
-}
-document.getElementById("move").style.transform= "translate(-"+ i*750 +"px)";
-i++;
-}, 5000);
+// // testimonial auto
+// var i = 0;
+// var intervalId = setInterval(function(){
+// if(i === 4){
+//     clearInterval(intervalId);
+// }
+// document.getElementById("move").style.transform= "translate(-"+ i*750 +"px)";
+// i++;
+// }, 5000);
+// document.getElementById("btn-1").addEventListener('click', function() {
+//     var i = 0;
+//     var intervalId = setInterval(function(){
+//     if(i === 4){
+//         clearInterval(intervalId);
+//     }
+//     document.getElementById("move").style.transform= "translate(-"+ i*750 +"px)";
+//     i++;
+//     }, 5000);
+// });
 
 
 // sidebar script
@@ -72,7 +82,7 @@ document.getElementById("cross").addEventListener('click', function() {
 
 document.getElementById("arrow").addEventListener('click', function() {
     window.scroll({
-        top: 620, 
+        top: 720, 
         left: 0, 
         behavior: 'smooth' 
     });
