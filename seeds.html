@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="assets/logo/glogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Goswami Khad Bhandar | Seeds</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="assets/logo/glogo.png" alt="GKB-logo" style="width: 50px; height: 50px; border-radius: 50%;">
+            <h2>GOSWAMI KHAD BHANDAR</h2><h3>GKB</h3>
+        </div>
+        <div class="nav-toggle">
+            <img src="https://image.flaticon.com/icons/png/512/812/812847.png" alt="menu-bar" id="bar">
+            <img src="https://image.flaticon.com/icons/png/512/3699/3699522.png" alt="cancel" id="cross">
+        </div>
+        <div class="nav-expand" id="nav-expand">
+            <ul>
+                <li class="nav-item" id="nav-item"><a href="index.html" class="nav-links">Home</a></li>
+                <li class="nav-item" id="nav-item"><a href="fertilizers.html" class="nav-links">Fertilizers</a></li>
+                <li class="nav-item" id="nav-item"><a href="pesticides.html" class="nav-links">Pesticides</a></li>
+                <li class="nav-item" id="nav-item"><a href="seeds.html" class="nav-links">Seeds</a></li>
+                <li class="nav-item" id="nav-item"><a href="index.html#about" class="nav-links">About Us</a></li>
+                <li class="nav-item" id="nav-item"><a href="index.html#contact" class="nav-links">Contact Us</a></li>
+                <li class="nav-item" id="nav-item">
+                    <button class="cart-btn" id="cart-toggle" aria-label="Open cart">
+                        <img src="https://img.icons8.com/fluent/96/000000/fast-cart.png" class="cart" alt="cart" />
+                        <span id="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding-top: 90px;">
+        <section id="seed-products" class="site-section">
+            <div class="section-header">
+                <h3 class="heading"><span>Top</span> Seeds</h3>
+            </div>
+            <div class="product-toolbar catalog-toolbar">
+                <input class="form-control" type="search" id="seed-search" placeholder="Search seed products..." />
+                <p><small>Browse 25 widely used seed products.</small></p>
+            </div>
+            <div class="product-grid" id="seed-grid"></div>
+            <div class="pagination" id="seed-pagination"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="container ">
+                <div class="row">
+                    <div class="nav-logo">
+                        <h2>GOSWAMI KHAD BHANDAR</h2><h3>GOSWAMI KHAD BHANDAR</h3>
+                    </div>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="fertilizers.html">Fertilizers</a></li>
+                        <li><a href="pesticides.html">Pesticides</a></li>
+                        <li><a href="seeds.html">Seeds</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <p><small>&copy; GKB 2021 | Created By Yogesh Giri</small></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="cart-close" class="cart-close" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-items"></div>
+        <div class="cart-footer">
+            <p id="cart-total">Total Items: 0</p>
+            <div class="cart-actions">
+                <button id="clear-cart" class="light-btn">Clear</button>
+                <button id="whatsapp-order" class="wa-btn">Order on WhatsApp</button>
+            </div>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>

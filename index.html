@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="img/glogo-min.png" type="image/x-icon">
+    <link rel="icon" href="assets/logo/glogo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Goswami Khad Bhandar | Home</title>
 </head>
@@ -30,11 +30,11 @@
                 </div>
         </div>
     </div>
-    <div class="main">
+    <div class="main" id="home">
         <div class="bg-img"></div>
         <nav class="navbar">
             <div class="nav-logo">
-                <img src="img/glogo-min.png" alt="GKB-logo">
+                <img src="assets/logo/glogo.png" alt="GKB-logo" style="width: 50px; height: 50px; border-radius: 50%;">
                 <h2>GOSWAMI KHAD BHANDAR</h2><h3>GKB</h3>
             </div>
             <div class="nav-toggle">
@@ -43,11 +43,19 @@
             </div>
             <div class="nav-expand" id="nav-expand">
                 <ul>
-                    <li class="nav-item" id=nav-item><a href="#" class="nav-links">Home</a></li>
-                    <li class="nav-item" id=nav-item><a href="#product" class="nav-links">Products</a></li>
+                    <li class="nav-item" id=nav-item><a href="#home" class="nav-links">Home</a></li>
+                    <li class="nav-item" id=nav-item><a href="#services" class="nav-links">Services</a></li>
+                    <li class="nav-item" id=nav-item><a href="fertilizers.html" class="nav-links">Fertilizers</a></li>
+                    <li class="nav-item" id=nav-item><a href="pesticides.html" class="nav-links">Pesticides</a></li>
+                    <li class="nav-item" id=nav-item><a href="seeds.html" class="nav-links">Seeds</a></li>
                     <li class="nav-item" id=nav-item><a href="#about" class="nav-links">About Us</a></li>
                     <li class="nav-item" id=nav-item><a href="#contact" class="nav-links">Contact Us</a></li>
-                    <li class="nav-item" id=nav-item><img src="https://img.icons8.com/fluent/96/000000/fast-cart.png" class="cart"/></li>
+                    <li class="nav-item" id=nav-item>
+                        <button class="cart-btn" id="cart-toggle" aria-label="Open cart">
+                            <img src="https://img.icons8.com/fluent/96/000000/fast-cart.png" class="cart" alt="cart" />
+                            <span id="cart-count">0</span>
+                        </button>
+                    </li>
                 </ul> 
             </div>
         </nav>
@@ -71,290 +79,87 @@
             </div>
         </div>
 
-        <section>
+        <section id="partners" class="site-section">
             <div class="section-header">
                 <h3 class="heading"><span>Our</span> Partners</h3>
             </div>
-                <div class="partner-container">
-                    <div class="partner">
-                        <tr>
-                            <td><div class="partner-img"><img src="partner/par-1.png" alt="Partner-logo"><h3>iffco</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-2.png" alt="Partner-logo"><h3>Abhimanyu</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-3.png" alt="Partner-logo"><h3>yara</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-4.png" alt="Partner-logo"><h3>rcf</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-13.png" alt="Partner-logo"><h3>jaivik bharat</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-5.png" alt="Partner-logo"><h3>wipro</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-6.png" alt="Partner-logo"><h3>nfl</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-7.png" alt="Partner-logo"><h3>nadiya</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-8.png" alt="Partner-logo"><h3>goswami agro</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-9.png" alt="Partner-logo"><h3>nfc</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-16.png" alt="Partner-logo"><h3>paras</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-12.png" alt="Partner-logo"><h3>shakti</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-10.png" alt="Partner-logo"><h3>iffco</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-14.png" alt="Partner-logo"><h3>google</h3></div></td>
-                            <td><div class="partner-img"><img src="partner/par-15.png" alt="Partner-logo"><h3>hlv</h3></div></td>
-                        </tr>
-                    </div>
+            <div class="partner-container">
+                <div class="partner">
+                    <tr>
+                        <td><div class="partner-img"><img src="partner/par-1.png" alt="Partner-logo"><h3>iffco</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-2.png" alt="Partner-logo"><h3>abhimanyu</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-3.png" alt="Partner-logo"><h3>yara</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-4.png" alt="Partner-logo"><h3>rcf</h3></div></td>
+                        <td><div class="partner-img"><img src="assets/logo/GKB-logo-2.png" alt="Partner-logo"><h3>goswami khad</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-13.png" alt="Partner-logo"><h3>jaivik bharat</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-5.png" alt="Partner-logo"><h3>wipro</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-6.png" alt="Partner-logo"><h3>nfl</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-7.png" alt="Partner-logo"><h3>nadiya</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-8.png" alt="Partner-logo"><h3>goswami agro</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-9.png" alt="Partner-logo"><h3>nfc</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-16.png" alt="Partner-logo"><h3>paras</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-12.png" alt="Partner-logo"><h3>shakti</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-10.png" alt="Partner-logo"><h3>iffco</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-14.png" alt="Partner-logo"><h3>google</h3></div></td>
+                        <td><div class="partner-img"><img src="partner/par-15.png" alt="Partner-logo"><h3>hlv</h3></div></td>
+                    </tr>
                 </div>
             </div>
-        </section>            
-
-
-        <section id="product">
+        </section>
+        <section id="services" class="site-section">
             <div class="section-header">
                 <h3 class="heading"><span>Our</span> Services</h3>
             </div>
-                <div class="card-container">
-                <div class="card">
-                    <div class="card-design"></div>
-                    <div class="card-img"><img src="img/1-min.png" alt="Fertilizer"></div>
-                    <div class="card-text">
-                        <h4>Fertilizers</h4>
-                        <p><small> Fertilizers are chemical substances supplied to the crops to increase their productivity using nitrogen, potassium, and phosphorus.</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-design"></div>
-                    <div class="card-img"><img src="img/2-min.png" alt="Pesticides"></div>
-                    <div class="card-text">
-                        <h4>Pesticides</h4>
-                        <p><small> Pesticide is any substance used to kill, repel, or control certain forms of plant or animal life that are considered to be pests.</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-design"></div>
-                    <div class="card-img"><img src="img/3-min.png" alt="Seeds"></div>
-                    <div class="card-text">
-                        <h4>Seeds</h4>
-                        <p><small> A seed is an embryonic plant enclosed in a protective outer covering. It plays very important part in the formation a plant.</small></p>
-                    </div>
-                </div>
+            <div class="card-container">
+                <div class="card"><div class="card-design"></div><div class="card-img"><img src="img/1-min.png" alt="Fertilizer"></div><div class="card-text"><h4>Fertilizers</h4><p><small> Fertilizers are chemical substances supplied to the crops to increase their productivity using nitrogen, potassium, and phosphorus.</small></p></div></div>
+                <div class="card"><div class="card-design"></div><div class="card-img"><img src="img/2-min.png" alt="Pesticides"></div><div class="card-text"><h4>Pesticides</h4><p><small> Pesticide is any substance used to kill, repel, or control certain forms of plant or animal life that are considered to be pests.</small></p></div></div>
+                <div class="card"><div class="card-design"></div><div class="card-img"><img src="img/3-min.png" alt="Seeds"></div><div class="card-text"><h4>Seeds</h4><p><small> A seed is an embryonic plant enclosed in a protective outer covering. It plays very important part in the formation a plant.</small></p></div></div>
             </div>
         </section>
-
-        <section id="about">
-            <div class="section-header">
-                <h3 class="heading"><span>Top Selling</span> Seeds</h3>
-            </div>
-                <div class="seed-container">
-                <div class="seed">
-                    <div class="seed-design a-design"></div>
-                    <div class="seed-img"><img src="seed/cabbage-min.png" alt="Seeds-img"></div>
-                    <div class="seed-text"><h4>Cabbage</h4></div>
-                </div>
-                <div class="seed">
-                    <div class="seed-design b-design"></div>
-                    <div class="seed-img"><img src="seed/corn-min.png" alt="Seeds-img"></div>
-                    <div class="seed-text"><h4>Corn</h4></div>
-                </div>
-                <div class="seed">
-                    <div class="seed-design c-design"></div>
-                    <div class="seed-img"><img src="seed/potato-min.png" alt="Seeds-img"></div>
-                    <div class="seed-text"><h4>Potato</h4></div>
-                </div>
-                <div class="seed">
-                    <div class="seed-design"></div>
-                    <div class="seed-img"><img src="seed/carrot-min.png" alt="Seeds-img"></div>
-                    <div class="seed-text"><h4>Carrot</h4></div>
-                </div>
-                <div class="seed">
-                    <div class="seed-design"></div>
-                    <div class="seed-img"><img src="seed/tomato-min.png" alt="Seeds-img"></div>
-                    <div class="seed-text"><h4>Tomato</h4></div>
-                </div>
-                <div class="seed">
-                    <div class="seed-design"></div>
-                    <div class="seed-img"><img src="seed/rice-min.png" alt="Seeds-img"></div>
-                    <div class="seed-text"><h4>Rice</h4></div>
-                </div>
-                <div class="seed">
-                    <div class="seed-design c-design"></div>
-                    <div class="seed-img"><img src="seed/wheat-min.png" alt="Seeds-img"></div>
-                    <div class="seed-text"><h4>Wheat</h4></div>
-                </div>
-                
+        <section id="fertilizer-products" class="site-section">
+            <div class="section-header"><h3 class="heading"><span>Top</span> Fertilizers</h3></div>
+            <div class="product-toolbar catalog-toolbar"><input type="search" id="fertilizer-search" placeholder="Search fertilizer products..." /><p><small>Browse 18 widely used fertilizer products.</small></p></div>
+            <div class="product-grid" id="fertilizer-grid"></div><div class="pagination" id="fertilizer-pagination"></div>
+            <p style="text-align:center; margin-top:16px;"><a href="fertilizers.html" class="nav-links" style="color:#1f7a38; border-bottom:none;">Open full Fertilizers page</a></p>
+        </section>
+        <section id="pesticide-products" class="site-section">
+            <div class="section-header"><h3 class="heading"><span>Top</span> Pesticides</h3></div>
+            <div class="product-toolbar catalog-toolbar"><input type="search" id="pesticide-search" placeholder="Search pesticide products..." /><p><small>Browse 7 widely used pesticide products.</small></p></div>
+            <div class="product-grid" id="pesticide-grid"></div><div class="pagination" id="pesticide-pagination"></div>
+            <p style="text-align:center; margin-top:16px;"><a href="pesticides.html" class="nav-links" style="color:#1f7a38; border-bottom:none;">Open full Pesticides page</a></p>
+        </section>
+        <section id="seed-products" class="site-section">
+            <div class="section-header"><h3 class="heading"><span>Top</span> Seeds</h3></div>
+            <div class="product-toolbar catalog-toolbar"><input type="search" id="seed-search" placeholder="Search seed products..." /><p><small>Browse 25 widely used seed products.</small></p></div>
+            <div class="product-grid" id="seed-grid"></div><div class="pagination" id="seed-pagination"></div>
+            <p style="text-align:center; margin-top:16px;"><a href="seeds.html" class="nav-links" style="color:#1f7a38; border-bottom:none;">Open full Seeds page</a></p>
+        </section>
+        <section id="about" class="site-section">
+            <div class="section-header"><h3 class="heading"><span>Top Selling</span> Seeds</h3></div>
+            <div class="seed-container">
+                <div class="seed"><div class="seed-design a-design"></div><div class="seed-img"><img src="seed/cabbage-min.png" alt="Seeds-img"></div><div class="seed-text"><h4>Cabbage</h4></div></div>
+                <div class="seed"><div class="seed-design b-design"></div><div class="seed-img"><img src="seed/corn-min.png" alt="Seeds-img"></div><div class="seed-text"><h4>Corn</h4></div></div>
+                <div class="seed"><div class="seed-design c-design"></div><div class="seed-img"><img src="seed/potato-min.png" alt="Seeds-img"></div><div class="seed-text"><h4>Potato</h4></div></div>
+                <div class="seed"><div class="seed-design"></div><div class="seed-img"><img src="seed/carrot-min.png" alt="Seeds-img"></div><div class="seed-text"><h4>Carrot</h4></div></div>
+                <div class="seed"><div class="seed-design"></div><div class="seed-img"><img src="seed/tomato-min.png" alt="Seeds-img"></div><div class="seed-text"><h4>Tomato</h4></div></div>
+                <div class="seed"><div class="seed-design"></div><div class="seed-img"><img src="seed/rice-min.png" alt="Seeds-img"></div><div class="seed-text"><h4>Rice</h4></div></div>
+                <div class="seed"><div class="seed-design c-design"></div><div class="seed-img"><img src="seed/wheat-min.png" alt="Seeds-img"></div><div class="seed-text"><h4>Wheat</h4></div></div>
             </div>
         </section>
-
-
-        <section id="grid-section">
-            <div class="section-header">
-                <h3 class="heading"><span>Our Main</span> Initiatives</h3>
-            </div>
-                <div class="grid-flex">
-                    <div class="grid">
-                    <div class="child1 grid-child">
-                        <div class="grid-blur"></div>
-                        <img src="test/kisan2.jpg" alt="grid-img" width="100%" height="100%">
-                        <div class="child-text"><h4>Agricultural Revolution</h4><p>The practice of growing a series of dissimilar or different types of crops in the same area in sequenced seasons so that the soil of farms is not used to only one type of nutrient. It helps in reducing soil erosion and increases soil fertility and crop yield.</p></div>
-                    </div>
-                    <div class="grid-child">
-                        <div class="grid-blur"></div>
-                        <img src="test/8.jpg" alt="grid-img" width="100%" height="100%">
-                        <div class="child-text"><h4>Help Helpless</h4><p>10% of our yearly income goes for the primary help of needy people near us.</p></div>
-                    </div>
-                    <div class="grid-child">
-                        <div class="grid-blur"></div>
-                        <img src="test/2.jpg" alt="grid-img" width="100%" height="100%">
-                        <div class="child-text"><h4>Spread Awareness</h4><p>Our brand partners always do many awareness programs and seminars in each and every part of our country.</p></div>
-                    </div>
-                    <div class="grid-child">
-                        <div class="grid-blur"></div>
-                        <img src="test/4.jpg" alt="grid-img" width="100%" height="100%">
-                        <div class="child-text"><h4>Easy Availability</h4><p>We are providing our products and services directly to the end user without involving any middle man.</p></div>
-                    </div>
-                    <div class="grid-child last-child">
-                        <div class="grid-blur"></div>
-                        <img src="test/6.jpg" alt="grid-img" width="100%" height="100%">
-                        <div class="child-text"><h4>Eco Friendly</h4><p>Our main and selfless motive is to provide fully eco-friendly products.</p></div>
-                    </div>
-                </div>
-            </div>
+        <section id="grid-section" class="site-section">
+            <div class="section-header"><h3 class="heading"><span>Our Main</span> Initiatives</h3></div>
+            <div class="grid-flex"><div class="grid"><div class="child1 grid-child"><div class="grid-blur"></div><img src="test/kisan2.jpg" alt="grid-img" width="100%" height="100%"><div class="child-text"><h4>Agricultural Revolution</h4><p>The practice of growing a series of dissimilar or different types of crops in the same area in sequenced seasons so that the soil of farms is not used to only one type of nutrient. It helps in reducing soil erosion and increases soil fertility and crop yield.</p></div></div><div class="grid-child"><div class="grid-blur"></div><img src="test/8.jpg" alt="grid-img" width="100%" height="100%"><div class="child-text"><h4>Help Helpless</h4><p>10% of our yearly income goes for the primary help of needy people near us.</p></div></div><div class="grid-child"><div class="grid-blur"></div><img src="test/2.jpg" alt="grid-img" width="100%" height="100%"><div class="child-text"><h4>Spread Awareness</h4><p>Our brand partners always do many awareness programs and seminars in each and every part of our country.</p></div></div><div class="grid-child"><div class="grid-blur"></div><img src="test/4.jpg" alt="grid-img" width="100%" height="100%"><div class="child-text"><h4>Easy Availability</h4><p>We are providing our products and services directly to the end user without involving any middle man.</p></div></div><div class="grid-child last-child"><div class="grid-blur"></div><img src="test/6.jpg" alt="grid-img" width="100%" height="100%"><div class="child-text"><h4>Eco Friendly</h4><p>Our main and selfless motive is to provide fully eco-friendly products.</p></div></div></div></div>
         </section>
-
-        <section>
-            <div class="section-header">
-                <h3 class="heading"><span>Our</span> Team</h3>
-            </div>
-                <div class="team-container">
-                <div class="team">
-                    <div class="team-design a-design"></div>
-                    <div class="team-img"><img src="team/1.jpg" alt="team-img"></div>
-                    <div class="team-text">
-                        <h4>Shri Hukum Giri</h4>
-                        <p><small>CEO/Founder</small></p>
-                        <p><small>Goswami Khad Bhandar</small></p>
-                    </div>
-                </div>
-                <div class="team">
-                    <div class="team-design b-design"></div>
-                    <div class="team-img"><img src="team/2.jpg" alt="team-img"></div>
-                    <div class="team-text">
-                        <h4>Rajesh Giri</h4>
-                        <p><small>Managing Director</small></p>
-                        <p><small>Goswami Khad Bhandar</small></p>
-                    </div>
-                </div>
-                <div class="team">
-                    <div class="team-design c-design"></div>
-                    <div class="team-img"><img src="team/3.jpg" alt="team-img"></div>
-                    <div class="team-text">
-                        <h4>Sanjeev Giri</h4>
-                        <p><small>Senior Manager</small></p>
-                        <p><small>Goswami Khad Bhandar</small></p>
-                    </div>
-                </div>
-            </div>
+        <section id="team" class="site-section">
+            <div class="section-header"><h3 class="heading"><span>Our</span> Team</h3></div>
+            <div class="team-container"><div class="team"><div class="team-design a-design"></div><div class="team-img"><img src="assets/team/ceo.jpg" alt="team-img"></div><div class="team-text"><h4>Shri Hukum Giri</h4><p><small>CEO/Founder</small></p><p><small>Goswami Khad Bhandar</small></p></div></div><div class="team"><div class="team-design b-design"></div><div class="team-img"><img src="assets/team/2.jpg" alt="team-img"></div><div class="team-text"><h4>Rajesh Giri</h4><p><small>Managing Director</small></p><p><small>Goswami Khad Bhandar</small></p></div></div><div class="team"><div class="team-design c-design"></div><div class="team-img"><img src="assets/team/1.jpg" alt="team-img"></div><div class="team-text"><h4>Sanjeev Giri</h4><p><small>Senior Manager</small></p><p><small>Goswami Khad Bhandar</small></p></div></div></div>
         </section>
-
-        
-        <section id="contact">
+        <section id="contact" class="site-section">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6952.2978496701735!2d78.47104950262447!3d27.44768293483412!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x163a82c6a849badd!2sGoswami%20Khad%20Bhandar!5e1!3m2!1sen!2sin!4v1627119218641!5m2!1sen!2sin" width="100%" height="500" style="border:0;" allowfullscreen="" loader="lazy"></iframe>
-            <div class="contact-container">
-                <div class="contact-box">
-                    <div class="contact-form">
-                        <div class="form-text">
-                            <h2>Contact Us</h2>
-                            <p><small>Do you have any queries?</small></p>
-                        </div>
-                        <form action="">
-                            <input type="text" placeholder="Your Name"><br>
-                            <input type="tel" placeholder="Your Mobile"><br>
-                            <input type="email" placeholder="Your Email"><br>
-                            <textarea name="message" cols="30" rows="8" placeholder="Enter Your Message..."></textarea><br>
-                            <input type="submit" value="Send">
-                        </form>
-                    </div>
-                    <div class="contact-detail">
-                        <ul>
-                            <li>Jalesar Road, Awagarh</li>
-                            <li>+91 9758846111</li>
-                            <li>goswamikhad@gmail.com</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <div class="contact-container"><div class="contact-box"><div class="contact-form"><div class="form-text"><h2>Contact Us</h2><p><small>Do you have any queries?</small></p></div><form action=""><input type="text" placeholder="Your Name"><br><input type="tel" placeholder="Your Mobile"><br><input type="email" placeholder="Your Email"><br><textarea name="message" cols="30" rows="8" placeholder="Enter Your Message..."></textarea><br><input type="submit" value="Send"></form></div><div class="contact-detail"><ul><li>Jalesar Road, Awagarh</li><li>+91 9758846111</li><li>goswamikhad@gmail.com</li></ul></div></div></div>
         </section>
-
-        <section id="testimonial">
-            <div class="background-container">
-                <div class="section-header">
-                    <h3 class="heading"><span>What People say</span> About Us </h3>
-                </div>
-                <div class="test-slider">
-                    <div class="wrap">
-                        <div class="test-box" id="move">
-                            <div class="test">
-                                <div class="test-img">
-                                    <img src="test/bhuvi.jpg" alt="testmonial-img">
-                                </div>
-                                <div class="test-text">
-                                    <img src="img/quote-1.png" alt="quote-icon" class="quote" id="lq">
-                                    <p><small><i>Great product! I used the mustard oil cake powder as a fertilizer for my garden plants. This one is the best I have used so far. My plants are healthy now.</i></small></p><br>
-                                    <p><b>Bhuvnesh Giri</b></p>
-                                    <p><small>~ Awagarh</small></p>
-                                    <img src="img/quote-2.png" alt="quote-icon" class="quote" id="rq">
-                                </div>
-                            </div>
-                            <div class="test">  
-                                <div class="test-img">
-                                    <img src="test/vishal.jpg" alt="testmonial-img">
-                                </div>
-                                <div class="test-text">
-                                    <img src="img/quote-1.png" alt="quote-icon" class="quote" id="lq">
-                                    <p><small><i>I am writing this review after using this product for around 4 months. In past I had used many other Humic Acid product but this is very good quality and genuine product.</i></small></p><br>
-                                    <p><b>Vishal Giri</b></p>
-                                    <p><small>~ Khatauta</small></p>
-                                    <img src="img/quote-2.png" alt="quote-icon" class="quote" id="rq">
-                                </div>
-                            </div>
-                            <div class="test">
-                                <div class="test-img">
-                                    <img src="test/akash.jpg" alt="testmonial-img">
-                                </div>
-                                <div class="test-text">
-                                    <img src="img/quote-1.png" alt="quote-icon" class="quote" id="lq">
-                                    <p><small><i>A very very good quality fine textured black compost. Packet of compost is so strong but packaging from Amazon is poor. Good compost to buy only the price is so so much high.</i></small></p><br>
-                                    <p><b>Akash Giri</b></p>
-                                    <p><small>~ Nagla Chaiyyan</small></p>
-                                    <img src="img/quote-2.png" alt="quote-icon" class="quote" id="rq">
-                                </div>
-                            </div>
-                            <div class="test">
-                                <div class="test-img">
-                                    <img src="test/gaurav.jpg" alt="testmonial-img">
-                                </div>
-                                <div class="test-text">
-                                    <img src="img/quote-1.png" alt="quote-icon" class="quote" id="lq">
-                                    <p><small><i>I am writing this after 2 years of use, I still have the original bottle and I keep it refrigerated. This product is basically an extract of a seaweed species called Ascophyllum nodosum. </i></small></p><br>
-                                    <p><b>Gaurav Giri</b></p>
-                                    <p><small>~ Nagla Lodha</small></p>
-                                    <img src="img/quote-2.png" alt="quote-icon" class="quote" id="rq">
-                                </div>
-                            </div>
-                            <div class="test">
-                                <div class="test-img">
-                                    <img src="test/ankit.jpg" alt="testmonial-img">
-                                </div>
-                                <div class="test-text">
-                                    <img src="img/quote-1.png" alt="quote-icon" class="quote" id="lq">
-                                    <p><small><i>This product is not only a natural antifungal , it also is a growth promoter . I have stopped adding mancozeb and carbendazime to my plants and they seem pretty happy.</i></small></p><br>
-                                    <p><b>Ankit Giri</b></p>
-                                    <p><small>~ Veer Nagar</small></p>
-                                    <img src="img/quote-2.png" alt="quote-icon" class="quote" id="rq">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <button class="test-btn" id="btn-1"></button>
-                        <button class="test-btn" id="btn-2"></button>
-                        <button class="test-btn" id="btn-3"></button>
-                        <button class="test-btn" id="btn-4"></button>
-                        <button class="test-btn" id="btn-5"></button>
-                    </div>
-                </div>
-            </div>
+        <section id="testimonial" class="site-section">
+            <div class="background-container"><div class="section-header"><h3 class="heading"><span>What People say</span> About Us </h3></div><div class="test-slider"><div class="test-controls"><button class="test-arrow prev" id="test-prev" aria-label="Previous testimonial">&#10094;</button><div class="wrap"><div class="test-box" id="move"><div class="test"><div class="test-img"><img src="assets/testmonial/1.jpg" alt="testmonial-img"></div><div class="test-text"><img src="img/quote-1.png" alt="quote-icon" class="quote" id="lq"><p><small><i>Great product! I used the mustard oil cake powder as a fertilizer for my garden plants. This one is the best I have used so far. My plants are healthy now.</i></small></p><br><p><b>Bhuvnesh Giri</b></p><p><small>~ Awagarh</small></p><img src="img/quote-2.png" alt="quote-icon" class="quote" id="rq"></div></div><div class="test"><div class="test-img"><img src="assets/testmonial/2.jpg" alt="testmonial-img"></div><div class="test-text"><img src="img/quote-1.png" alt="quote-icon" class="quote" id="lq"><p><small><i>I am writing this review after using this product for around 4 months. In past I had used many other Humic Acid product but this is very good quality and genuine product.</i></small></p><br><p><b>Vishal Giri</b></p><p><small>~ Khatauta</small></p><img src="img/quote-2.png" alt="quote-icon" class="quote" id="rq"></div></div><div class="test"><div class="test-img"><img src="assets/testmonial/3.jpg" alt="testmonial-img"></div><div class="test-text"><img src="img/quote-1.png" alt="quote-icon" class="quote" id="lq"><p><small><i>A very very good quality fine textured black compost. Packet of compost is so strong but packaging from Amazon is poor. Good compost to buy only the price is so so much high.</i></small></p><br><p><b>Akash Giri</b></p><p><small>~ Nagla Chaiyyan</small></p><img src="img/quote-2.png" alt="quote-icon" class="quote" id="rq"></div></div><div class="test"><div class="test-img"><img src="assets/testmonial/4.jpg" alt="testmonial-img"></div><div class="test-text"><img src="img/quote-1.png" alt="quote-icon" class="quote" id="lq"><p><small><i>I am writing this after 2 years of use, I still have the original bottle and I keep it refrigerated. This product is basically an extract of a seaweed species called Ascophyllum nodosum. </i></small></p><br><p><b>Gaurav Giri</b></p><p><small>~ Nagla Lodha</small></p><img src="img/quote-2.png" alt="quote-icon" class="quote" id="rq"></div></div><div class="test"><div class="test-img"><img src="assets/testmonial/5.jpg" alt="testmonial-img"></div><div class="test-text"><img src="img/quote-1.png" alt="quote-icon" class="quote" id="lq"><p><small><i>This product is not only a natural antifungal , it also is a growth promoter . I have stopped adding mancozeb and carbendazime to my plants and they seem pretty happy.</i></small></p><br><p><b>Ankit Giri</b></p><p><small>~ Veer Nagar</small></p><img src="img/quote-2.png" alt="quote-icon" class="quote" id="rq"></div></div></div></div><button class="test-arrow next" id="test-next" aria-label="Next testimonial">&#10095;</button></div><div class="buttons"><button class="test-btn" id="btn-1"></button><button class="test-btn" id="btn-2"></button><button class="test-btn" id="btn-3"></button><button class="test-btn" id="btn-4"></button><button class="test-btn" id="btn-5"></button></div></div></div>
         </section>
 
 
@@ -366,11 +171,13 @@
                         <h2>GOSWAMI KHAD BHANDAR</h2><h3>GOSWAMI KHAD BHANDAR</h3>
                     </div>
                     <ul class="footer-nav">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="fertilizers.html">Fertilizers</a></li>
+                        <li><a href="pesticides.html">Pesticides</a></li>
+                        <li><a href="seeds.html">Seeds</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
                     <br>
                     <div class="social">
@@ -392,8 +199,24 @@
             </div>
           </footer>
 
+        <div class="cart-overlay" id="cart-overlay"></div>
+        <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button id="cart-close" class="cart-close" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="cart-body" id="cart-items"></div>
+            <div class="cart-footer">
+                <p id="cart-total">Total Items: 0</p>
+                <div class="cart-actions">
+                    <button id="clear-cart" class="light-btn">Clear</button>
+                    <button id="whatsapp-order" class="wa-btn">Order on WhatsApp</button>
+                </div>
+            </div>
+        </aside>
 
     </div>
+    <script src="section-loader.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>       
-<script src="script.js"></script>
+</html>
