@@ -19,7 +19,7 @@ section{
 .site-section{
     margin-top: 0;
     padding: clamp(42px, 6vw, 76px) 0;
-    scroll-margin-top: 92px;
+    scroll-margin-top: 70px;
 }
 .section-header{
     width: 100%;
@@ -385,6 +385,11 @@ a.nav-links:hover{
     cursor: pointer;
     overflow: hidden;
 
+}
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 .card-img{
     width: 200px;
@@ -1220,7 +1225,7 @@ footer{
 @media(max-width:720px){
     .site-section{
         padding: 34px 0;
-        scroll-margin-top: 74px;
+        scroll-margin-top: 50px;
     }
 }
 
