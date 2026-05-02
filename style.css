@@ -131,7 +131,7 @@ section{
     z-index: -10;
     width: 100vw;
     height: 100vh;
-    background-image: url(assets/bg/bg-1.jpg);
+    background-image: url(https://res.cloudinary.com/dhpdqtbn7/image/upload/v1777740898/bg-1_mri3tn.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
