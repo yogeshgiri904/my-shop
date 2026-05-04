@@ -1,4 +1,12 @@
 async function loadProducts(type) {
+  const supabaseConfig = window.SUPABASE_CONFIG || {};
+  const SUPABASE_URL = supabaseConfig.url;
+  const SUPABASE_ANON_KEY = supabaseConfig.anonKey;
+
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    console.error("Missing Supabase config. Add values in supabase.config.js");
+    return { items: [] };
+  }
 
   let supabaseConnection;
   try {
