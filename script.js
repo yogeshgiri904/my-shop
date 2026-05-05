@@ -238,7 +238,7 @@ const initApp = async function () {
 
     const generateWhatsappMessage = function () {
         const lines = getCartLines().map((line, i) =>
-            `${i + 1}. ${line.product.name} x ${line.quantity} (${line.product.unit})`
+            `${i + 1}. ${line.product.name} x ${line.quantity}\n`
         ).join("\n");
 
         return (
@@ -350,6 +350,225 @@ const initApp = async function () {
         saveCart();
         renderCart();
     });
+
+
+    // testimonial script
+    const testimonialTrack = document.getElementById("move");
+    const testimonialWrap = document.querySelector("#testimonial .wrap");
+    const testimonialButtons = Array.from(document.querySelectorAll("#testimonial .test-btn"));
+    const testimonialPrev = document.getElementById("test-prev");
+    const testimonialNext = document.getElementById("test-next");
+
+    if (testimonialTrack && testimonialWrap && testimonialButtons.length) {
+        const originalSlides = Array.from(testimonialTrack.querySelectorAll(".test"));
+        const testimonialSlider = document.querySelector("#testimonial .test-slider");
+        const totalSlides = originalSlides.length;
+        let activeTestimonialIndex = 1;
+        let isSliding = false;
+        let slideGuardTimer = null;
+        let autoplayInterval = null;
+        let autoplayResumeTimer = null;
+        const AUTOPLAY_MS = 4500;
+        const RESUME_IDLE_MS = 3500;
+
+        const firstClone = originalSlides[0].cloneNode(true);
+        const lastClone = originalSlides[totalSlides - 1].cloneNode(true);
+        testimonialTrack.appendChild(firstClone);
+        testimonialTrack.insertBefore(lastClone, originalSlides[0]);
+
+        const updateButtons = function (index) {
+            testimonialButtons.forEach(function (button, buttonIndex) {
+                button.classList.toggle("is-active", buttonIndex === index);
+            });
+        };
+
+        const getRealIndex = function (trackIndex) {
+            if (trackIndex === 0) {
+                return totalSlides - 1;
+            }
+            if (trackIndex === totalSlides + 1) {
+                return 0;
+            }
+            return trackIndex - 1;
+        };
+
+        const applyTrackLayout = function () {
+            const slideWidth = testimonialWrap.clientWidth;
+            const allSlides = Array.from(testimonialTrack.querySelectorAll(".test"));
+            allSlides.forEach(function (slide) {
+                slide.style.minWidth = slideWidth + "px";
+                slide.style.maxWidth = slideWidth + "px";
+            });
+            testimonialTrack.style.width = (slideWidth * allSlides.length) + "px";
+        };
+
+        const moveToTestimonial = function (index, animate) {
+            const slideWidth = testimonialWrap.clientWidth;
+            testimonialTrack.style.transition = animate ? "transform .5s ease" : "none";
+            activeTestimonialIndex = index;
+            testimonialTrack.style.transform = "translateX(-" + (slideWidth * index) + "px)";
+            updateButtons(getRealIndex(index));
+            if (!animate) {
+                isSliding = false;
+            }
+            if (slideGuardTimer) {
+                clearTimeout(slideGuardTimer);
+            }
+            if (animate) {
+                slideGuardTimer = setTimeout(function () {
+                    isSliding = false;
+                }, 700);
+            }
+        };
+
+        const goToNextSlide = function () {
+            if (isSliding) {
+                return;
+            }
+            isSliding = true;
+            moveToTestimonial(activeTestimonialIndex + 1, true);
+        };
+
+        const stopAutoplay = function () {
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+                autoplayInterval = null;
+            }
+        };
+
+        const startAutoplay = function () {
+            stopAutoplay();
+            autoplayInterval = setInterval(function () {
+                goToNextSlide();
+            }, AUTOPLAY_MS);
+        };
+
+        const scheduleAutoplayResume = function () {
+            stopAutoplay();
+            if (autoplayResumeTimer) {
+                clearTimeout(autoplayResumeTimer);
+            }
+            autoplayResumeTimer = setTimeout(function () {
+                startAutoplay();
+            }, RESUME_IDLE_MS);
+        };
+
+        const onManualInteraction = function () {
+            scheduleAutoplayResume();
+        };
+
+        testimonialButtons.forEach(function (button, index) {
+            button.addEventListener("click", function () {
+                const targetIndex = index + 1;
+                if (targetIndex === activeTestimonialIndex || isSliding) {
+                    return;
+                }
+                onManualInteraction();
+                isSliding = true;
+                moveToTestimonial(targetIndex, true);
+            });
+        });
+
+        if (testimonialPrev) {
+            testimonialPrev.addEventListener("click", function () {
+                if (isSliding) {
+                    return;
+                }
+                onManualInteraction();
+                isSliding = true;
+                moveToTestimonial(activeTestimonialIndex - 1, true);
+            });
+        }
+
+        if (testimonialNext) {
+            testimonialNext.addEventListener("click", function () {
+                if (isSliding) {
+                    return;
+                }
+                onManualInteraction();
+                goToNextSlide();
+            });
+        }
+
+        testimonialTrack.addEventListener("transitionend", function () {
+            if (!isSliding) {
+                return;
+            }
+            if (activeTestimonialIndex === totalSlides + 1) {
+                moveToTestimonial(1, false);
+            } else if (activeTestimonialIndex === 0) {
+                moveToTestimonial(totalSlides, false);
+            }
+            isSliding = false;
+        });
+
+        window.addEventListener("resize", function () {
+            applyTrackLayout();
+            moveToTestimonial(activeTestimonialIndex, false);
+        });
+
+        if (testimonialSlider) {
+            testimonialSlider.addEventListener("mouseenter", stopAutoplay);
+            testimonialSlider.addEventListener("mouseleave", scheduleAutoplayResume);
+            testimonialSlider.addEventListener("touchstart", stopAutoplay, { passive: true });
+            testimonialSlider.addEventListener("touchend", scheduleAutoplayResume, { passive: true });
+        }
+
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) {
+                stopAutoplay();
+                return;
+            }
+            scheduleAutoplayResume();
+        });
+
+        applyTrackLayout();
+        moveToTestimonial(1, false);
+        startAutoplay();
+    }
+
+    // sidebar script
+    const bar = document.getElementById("bar");
+    const cross = document.getElementById("cross");
+    const navExpand = document.getElementById("nav-expand");
+    const navLinks = Array.from(document.querySelectorAll(".nav-links"));
+
+    if (bar && cross && navExpand) {
+        bar.addEventListener("click", function () {
+            navExpand.style.transform = "translate(0px)";
+            cross.style.display = "inline";
+            bar.style.display = "none";
+        });
+
+        cross.addEventListener("click", function () {
+            navExpand.style.transform = "translate(100vw)";
+            bar.style.display = "inline";
+            cross.style.display = "none";
+        });
+    }
+
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            if (window.innerWidth <= 720 && bar && cross && navExpand) {
+                navExpand.style.transform = "translate(100vw)";
+                bar.style.display = "inline";
+                cross.style.display = "none";
+            }
+        });
+    });
+
+
+    const arrowDown = document.getElementById("arrow");
+    if (arrowDown) {
+        arrowDown.addEventListener("click", function () {
+            window.scroll({
+                top: 720,
+                left: 0,
+                behavior: "smooth"
+            });
+        });
+    }
+
 };
 
 // Init safely (prevents double run bugs)
