@@ -12,9 +12,9 @@ const initApp = async function () {
     __appInitDone = true;
 
     const pageName = window.location.pathname.split("/").pop() || "";
-    const shouldLoadFertilizer = pageName === "fertilizers.html" || pageName === "index.html" || pageName === "";
-    const shouldLoadPesticide = pageName === "pesticides.html" || pageName === "index.html" || pageName === "";
-    const shouldLoadSeed = pageName === "seeds.html" || pageName === "index.html" || pageName === "";
+    const shouldLoadFertilizer = pageName === "fertilizers.html" || pageName === "fertilizers";
+    const shouldLoadPesticide = pageName === "pesticides.html" || pageName === "pesticides";
+    const shouldLoadSeed = pageName === "seeds.html" || pageName === "seeds";
 
     const fertilizerProductsRaw = shouldLoadFertilizer ? await loadProducts?.("fertilizer") : { items: [] };
     const pesticideProductsRaw = shouldLoadPesticide ? await loadProducts?.("pesticide") : { items: [] };
