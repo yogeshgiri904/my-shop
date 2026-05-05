@@ -37,6 +37,7 @@ const initApp = async function () {
         ...pesticideProducts,
         ...seedProducts
     ];
+    console.log('All Products:', products);
     // DOM elements
     const fertilizerGrid = document.getElementById("fertilizer-grid");
     const fertilizerSearch = document.getElementById("fertilizer-search");

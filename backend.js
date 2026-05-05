@@ -6,6 +6,8 @@ async function loadProducts(type) {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
     console.error("Missing Supabase config.");
     return { items: [] };
+  }else{
+    console.error("Supabase Loaded.");
   }
 
   let supabaseConnection;
@@ -15,7 +17,7 @@ async function loadProducts(type) {
       SUPABASE_ANON_KEY
     );
   } catch (clientError) {
-    throw clientError;
+    console.error(clientError);
   }
 
   const { data, error } = await supabaseConnection
@@ -26,6 +28,8 @@ async function loadProducts(type) {
   if (error) {
     console.error("Error loading pesticides:", error);
     return { items: [] };
+  }else{
+    console.error("esticides:", data);
   }
 
   const pesticideProducts = {
@@ -38,6 +42,6 @@ async function loadProducts(type) {
       unit: p.stock
     }))
   };
-
+  console.error("Pesticides ready :", pesticideProducts);
   return pesticideProducts;
 }
