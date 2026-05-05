@@ -7,7 +7,7 @@ async function loadProducts(type) {
     console.error("Missing Supabase config.");
     return { items: [] };
   }else{
-    console.error("Supabase Loaded.");
+    console.log("Supabase connected successfully.");
   }
 
   let supabaseConnection;
@@ -26,10 +26,10 @@ async function loadProducts(type) {
     .eq("category", type);
 
   if (error) {
-    console.error("Error loading pesticides:", error);
+    console.error(`Error loading ${type}:`, error);
     return { items: [] };
   }else{
-    console.error("esticides:", data);
+    console.log(`Loaded ${type}:`, data);
   }
 
   const pesticideProducts = {
@@ -42,6 +42,6 @@ async function loadProducts(type) {
       unit: p.stock
     }))
   };
-  console.error("Pesticides ready :", pesticideProducts);
+  console.log(`Final Object ${type}:`, pesticideProducts);
   return pesticideProducts;
 }
