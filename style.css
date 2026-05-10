@@ -502,17 +502,7 @@ a.nav-links:hover{
     width: min(1100px, 95%);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 18px;
-}
-.product-grid{
-    width: min(1100px, 95%);
-    margin: 0 auto;
-    display: grid;
-
-    /* smaller cards so more fit per row */
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 16px;
 }
 
@@ -521,8 +511,6 @@ a.nav-links:hover{
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-
-    /* needed for quantity pill positioning */
     position: relative;
 }
 
@@ -536,11 +524,11 @@ a.nav-links:hover{
     background: #ecfccb;
     color: #365314;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 8px;
+    right: 8px;
     padding: 4px 10px;
     border-radius: 999px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
     z-index: 2;
 }
@@ -553,8 +541,17 @@ a.nav-links:hover{
     display: block;
 }
 
+
 .product-content{
     padding: 14px;
+}
+
+.product-desc{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;   /* number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product-meta {
@@ -601,26 +598,6 @@ a.nav-links:hover{
     padding: 6px 10px;
     border-radius: 999px;
     color: #0f172a;
-}
-
-.unit {
-    background: #ecfccb;
-    padding: 6px 10px;
-    border-radius: 999px;
-    color: #365314;
-}
-
-.separator {
-    color: #94a3b8;
-}
-
-.add-btn {
-    border: none;
-    padding: 8px 14px;
-    border-radius: 10px;
-    cursor: pointer;
-    background: #111827;
-    color: white;
 }
 .add-btn{
     border: none;

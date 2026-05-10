@@ -180,25 +180,19 @@ const initApp = async function () {
     
             return `
                 <article class='product-card'>
-
                      <div class="product-image">
                         <span class="quantity-pill">${product.unit} pcs</span>
-
-                        <img src='${product.imageUrl || product.image || fallback}' alt='${product.name}'loading='lazy'onerror="this.src='${fallback}'"/>
+                        <img src='${product.imageUrl || product.image || fallback}' alt='${product.name}' loading='lazy' onerror="this.src='${fallback}'"/>
                     </div>
-    
                     <div class='product-content'>
                         <h4>${product.name}</h4>
-    
                         <p class='product-desc'>
                             <small>${product.description}</small>
                         </p>
-    
                         <div class='product-meta'>
                             <p class='product-price'>
                                 <span class='rupee'>₹${product.price}</span>
                             </p>
-    
                             <button class='add-btn' data-id='${product.id}'>
                                 Add to Cart
                             </button>
