@@ -169,28 +169,39 @@ const initApp = async function () {
 
     const renderProductCards = function (grid, items) {
         if (!grid) return;
-
+    
         if (!items.length) {
             grid.innerHTML = "<p class='empty-products'>No products found.</p>";
             return;
         }
-
+    
         grid.innerHTML = items.map(product => {
             const fallback = `https://picsum.photos/seed/${encodeURIComponent(product.id)}/600/400`;
-
+    
             return `
                 <article class='product-card'>
-                    <img src='${product.imageUrl || product.image || fallback}' alt='${product.name}'
-                        loading='lazy'
-                        onerror="this.src='${fallback}'" />
 
+                     <div class="product-image">
+                        <span class="quantity-pill">${product.unit} pcs</span>
+
+                        <img src='${product.imageUrl || product.image || fallback}' alt='${product.name}'loading='lazy'onerror="this.src='${fallback}'"/>
+                    </div>
+    
                     <div class='product-content'>
                         <h4>${product.name}</h4>
-                        <p><small>${product.description}</small></p>
-
+    
+                        <p class='product-desc'>
+                            <small>${product.description}</small>
+                        </p>
+    
                         <div class='product-meta'>
-                            <p class='product-price'>Rs ${product.price} / ${product.unit}</p>
-                            <button class='add-btn' data-id='${product.id}'>Add to Cart</button>
+                            <p class='product-price'>
+                                <span class='rupee'>₹${product.price}</span>
+                            </p>
+    
+                            <button class='add-btn' data-id='${product.id}'>
+                                Add to Cart
+                            </button>
                         </div>
                     </div>
                 </article>
