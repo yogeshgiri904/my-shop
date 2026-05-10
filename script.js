@@ -130,7 +130,7 @@ const initApp = async function () {
             <div class='cart-row'>
                 <div>
                     <h4>${line.product.name}</h4>
-                    <p><small>${line.product.unit}</small></p>
+                    <p><small>${line.product.unit} available in stock</small></p>
                     <p class='cart-price'>Rs ${line.product.price}</p>
                 </div>
                 <div class='cart-qty'>
